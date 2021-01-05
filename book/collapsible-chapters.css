@@ -50,3 +50,7 @@
 #collapse-all:hover {
     text-decoration-line: underline;
 }
+
+.page-wrapper {
+    overflow: hidden;
+}
