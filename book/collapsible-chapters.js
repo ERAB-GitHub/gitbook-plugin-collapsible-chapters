@@ -23,7 +23,7 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
         expand(activeChapter);
         expand(activeChapter.parents(CHAPTER));
 
-        // サイドバーの表示幅を超える場合、ツールチップを追加
+        // add a tootip on the item whose width exceeds pane
         $('ul.summary li>a').each(function (index, element) {
             let $e = $(element);
             let text = $e.text().trim();
@@ -38,7 +38,7 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
             $c.remove();
         });
 
-        // サイドバー操作パネル
+        // add a panel that has "open all" and "collapse all" buttons
         $('ul.summary').prepend(
             '<li id="collapse-control">' +
             '<span>目次:</span> ' +
@@ -48,7 +48,7 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
             '<hr>' +
             '</li>'
         );
-        // 全て開く
+        // open all
         $('#expand-all').on('click', function () {
             $('.chapter').each(function (index, chapter) {
                 let $chapter = $(chapter);
@@ -57,7 +57,7 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
                 }
             });
         });
-        // 全て閉じる
+        // close all
         $('#collapse-all').on('click', function () {
             $('.chapter').each(function (index, chapter) {
                 let $chapter = $(chapter);
