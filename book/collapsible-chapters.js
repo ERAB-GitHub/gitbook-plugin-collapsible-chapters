@@ -34,6 +34,8 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
             if ($c.width() >= Math.floor($e.width())) {
                 $e.attr('title', text);
             }
+
+            $c.remove();
         });
 
         // サイドバー操作パネル
